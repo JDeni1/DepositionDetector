@@ -6,7 +6,8 @@
 "scripts": {
   "dev": "concurrently -n web,api \"vite\" \"tsx watch server/index.ts\"",
   "build": "tsc -b && vite build",
-  "test": "vitest run"
+  "test": "vitest run",
+  "record": "tsx server/scripts/record-fixture.ts"
 },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",

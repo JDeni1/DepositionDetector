@@ -1,0 +1,236 @@
+{
+  "claims": [
+    {
+      "id": "A1",
+      "transcript": "A",
+      "topic": "whereabouts",
+      "subject": "evening of November 3rd",
+      "statement": "Webb was at home all evening on November 3rd.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I was at home all evening."
+    },
+    {
+      "id": "A2",
+      "transcript": "A",
+      "topic": "activity",
+      "subject": "pizza order",
+      "statement": "Webb ordered pizza around 7pm.",
+      "polarity": "affirms",
+      "time": {
+        "earliest": 1140,
+        "latest": 1140
+      },
+      "quote": "I ordered pizza around 7pm"
+    },
+    {
+      "id": "A3",
+      "transcript": "A",
+      "topic": "activity",
+      "subject": "watching TV",
+      "statement": "Webb watched TV that evening.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "watched TV"
+    },
+    {
+      "id": "A4",
+      "transcript": "A",
+      "topic": "companions",
+      "subject": "speaking to anyone that night",
+      "statement": "Webb did not speak to anyone and was alone that night.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "No, I was alone."
+    },
+    {
+      "id": "A5",
+      "transcript": "A",
+      "topic": "relationship",
+      "subject": "Webb's wife",
+      "statement": "Webb's wife was visiting her sister in Portland.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "My wife was visiting her sister in Portland."
+    },
+    {
+      "id": "A6",
+      "transcript": "A",
+      "topic": "sleep",
+      "subject": "bedtime",
+      "statement": "Webb went to sleep around 10 to 10:30.",
+      "polarity": "affirms",
+      "time": {
+        "earliest": 1320,
+        "latest": 1350
+      },
+      "quote": "Around 10, maybe 10:30."
+    },
+    {
+      "id": "A7",
+      "transcript": "A",
+      "topic": "place_visited",
+      "subject": "Hargrove Street warehouse",
+      "statement": "Webb has never been to the Hargrove Street warehouse.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "No, never."
+    },
+    {
+      "id": "A8",
+      "transcript": "A",
+      "topic": "place_visited",
+      "subject": "Hargrove Street warehouse",
+      "statement": "Webb does not know where the Hargrove Street warehouse is.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "I don't even know where that is."
+    },
+    {
+      "id": "A9",
+      "transcript": "A",
+      "topic": "vehicle",
+      "subject": "grey Honda Civic",
+      "statement": "Webb owned a grey Honda Civic at the time.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I did at the time, yes."
+    },
+    {
+      "id": "A10",
+      "transcript": "A",
+      "topic": "vehicle",
+      "subject": "grey Honda Civic",
+      "statement": "Webb sold the Civic in January.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I sold it in January."
+    },
+    {
+      "id": "A11",
+      "transcript": "A",
+      "topic": "relationship",
+      "subject": "Daniel Cho",
+      "statement": "Webb had not met Daniel Cho before November 3rd.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "No."
+    },
+    {
+      "id": "A12",
+      "transcript": "A",
+      "topic": "relationship",
+      "subject": "Daniel Cho",
+      "statement": "Webb had never heard of Daniel Cho before this started.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "I'd never heard of him before this whole thing started."
+    },
+    {
+      "id": "B1",
+      "transcript": "B",
+      "topic": "whereabouts",
+      "subject": "evening of November 3rd",
+      "statement": "Webb was home on the evening of November 3rd.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I was home."
+    },
+    {
+      "id": "B2",
+      "transcript": "B",
+      "topic": "activity",
+      "subject": "grocery trip",
+      "statement": "Webb went out briefly for groceries around 7:30 and came right back.",
+      "polarity": "affirms",
+      "time": {
+        "earliest": 1170,
+        "latest": 1170
+      },
+      "quote": "I think I went out briefly to get some groceries, maybe around 7:30, but came right back."
+    },
+    {
+      "id": "B3",
+      "transcript": "B",
+      "topic": "activity",
+      "subject": "pizza and groceries",
+      "statement": "Webb might have both ordered pizza and gone for groceries.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I might have done both."
+    },
+    {
+      "id": "B4",
+      "transcript": "B",
+      "topic": "companions",
+      "subject": "neighbor Tom",
+      "statement": "Neighbor Tom might have seen Webb in the parking lot and they waved.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "My neighbor, Tom, might have seen me. We waved or something in the parking lot."
+    },
+    {
+      "id": "B5",
+      "transcript": "B",
+      "topic": "sleep",
+      "subject": "bedtime",
+      "statement": "Webb went to sleep late, around midnight.",
+      "polarity": "affirms",
+      "time": {
+        "earliest": 1440,
+        "latest": 1440
+      },
+      "quote": "Midnight maybe."
+    },
+    {
+      "id": "B6",
+      "transcript": "B",
+      "topic": "sleep",
+      "subject": "trouble sleeping",
+      "statement": "Webb had trouble sleeping that night.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I had trouble sleeping."
+    },
+    {
+      "id": "B7",
+      "transcript": "B",
+      "topic": "place_visited",
+      "subject": "Hargrove Street area",
+      "statement": "Webb has driven through the Hargrove Street area.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I've driven through that part of town."
+    },
+    {
+      "id": "B8",
+      "transcript": "B",
+      "topic": "relationship",
+      "subject": "Daniel Cho",
+      "statement": "Webb knew of Daniel Cho.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "I knew of him."
+    },
+    {
+      "id": "B9",
+      "transcript": "B",
+      "topic": "relationship",
+      "subject": "Daniel Cho",
+      "statement": "Webb and Daniel Cho had mutual friends.",
+      "polarity": "affirms",
+      "time": null,
+      "quote": "We had mutual friends."
+    },
+    {
+      "id": "B10",
+      "transcript": "B",
+      "topic": "relationship",
+      "subject": "Daniel Cho",
+      "statement": "Webb does not think he had met Daniel Cho face to face.",
+      "polarity": "denies",
+      "time": null,
+      "quote": "I don't think I'd met him face to face."
+    }
+  ]
+}
