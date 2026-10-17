@@ -1,6 +1,4 @@
-import type { Claim } from "../../shared/types";
-
-type TimeRange = NonNullable<Claim["time"]>;
+import type { LanguageSignals, QuoteMatch, TimeRange } from "../../shared/types";
 
 // ---------- Text cleanup ----------
 
@@ -8,9 +6,9 @@ type TimeRange = NonNullable<Claim["time"]>;
 export function normalizeText(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[\u2018\u2019]/g, "'")
-    .replace(/[\u201C\u201D]/g, '"')
-    .replace(/[\u2013\u2014]/g, "-")
+    .replace(/[‘’]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -31,12 +29,6 @@ const UNCERTAIN_PHRASES = [
 
 /** Words that make the statement absolute, so a conflict is harder to explain away. */
 const ABSOLUTE_PHRASES = ["never", "definitely", "absolutely", "certain", "always", "all evening", "all night"];
-
-export interface LanguageSignals {
-  approximate: boolean; // a time was given loosely
-  uncertain: string[];  // hedge phrases found
-  absolute: string[];   // absolute phrases found
-}
 
 function findPhrases(text: string, phrases: string[]): string[] {
   return phrases.filter((phrase) => new RegExp(`\\b${phrase}\\b`).test(text));
@@ -79,8 +71,6 @@ export function formatMinutes(minutes: number): string {
 }
 
 // ---------- Quote verification ----------
-
-export type QuoteMatch = "exact" | "normalized" | "missing";
 
 /** Checks that Claude's quote really appears in the transcript. */
 export function verifyQuote(quote: string, transcript: string): QuoteMatch {
