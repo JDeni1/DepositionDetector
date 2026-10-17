@@ -130,14 +130,17 @@ function firstGate(c: Candidate, e: Evidence): RuleHit | null {
 // ---------- T rules: which kind of real contradiction ----------
 
 function decideType(c: Candidate, e: Evidence): { type: ContradictionType; hit: RuleHit } {
-  // T1: one statement affirms what the other denies, about the same subject.
-  if (e.oppositePolarity && e.subjectSimilarity >= SAME_SUBJECT_THRESHOLD) {
+  // T1b: an absolute claim ("all night", "never") broken by a specific exception.
+  const absoluteA = e.signalsA.absolute.length > 0;
+  const absoluteB = e.signalsB.absolute.length > 0;
+  if (c.conflictKind === "fact" && absoluteA !== absoluteB && e.subjectSimilarity >= SAME_SUBJECT_THRESHOLD) {
+    const words = absoluteA ? e.signalsA.absolute : e.signalsB.absolute;
     return {
       type: "DIRECT",
       hit: {
-        id: "T1",
-        name: "OPPOSITE_POLARITY",
-        detail: `One statement ${c.a.polarity} and the other ${c.b.polarity} the same subject.`,
+        id: "T1b",
+        name: "ABSOLUTE_CLAIM_BROKEN",
+        detail: `One statement is absolute ("${words.join('", "')}") and the other describes an exception.`,
       },
     };
   }

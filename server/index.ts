@@ -1,14 +1,15 @@
 import "dotenv/config";
 import express from "express";
 import Anthropic from "@anthropic-ai/sdk";
-import { AnalyzeRequestSchema } from "../shared/types";
-import { extractClaims, ExtractionError } from "./llm/extract";
+import { AnalyzeRequestSchema, type AnalyzeResponse } from "../shared/types";
+import { extractCandidates, ExtractionError, isMockMode } from "./llm/extract";
+import { analyzeCandidates } from "./engine/analyze";
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, mock: process.env.MOCK_LLM === "true" });
+  res.json({ ok: true, mock: isMockMode() });
 });
 
 app.post("/api/analyze", async (req, res) => {
@@ -19,9 +20,13 @@ app.post("/api/analyze", async (req, res) => {
   }
 
   try {
-    const extraction = await extractClaims(body.data.transcriptA, body.data.transcriptB);
-    // Next phase: pass extraction.claims into the engine and return contradictions too.
-    res.json(extraction);
+    const { transcriptA, transcriptB } = body.data;
+    const extraction = await extractCandidates(transcriptA, transcriptB);
+    const response: AnalyzeResponse = {
+      mock: isMockMode(),
+      findings: analyzeCandidates(extraction.candidates, transcriptA, transcriptB),
+    };
+    res.json(response);
   } catch (err) {
     console.error(err);
     if (err instanceof Anthropic.RateLimitError) {
@@ -37,4 +42,9 @@ app.post("/api/analyze", async (req, res) => {
 });
 
 const port = Number(process.env.PORT ?? 3001);
-app.listen(port, () => console.log(`API on http://localhost:${port}`));
+app.listen(port, () => {
+  console.log(`API on http://localhost:${port}`);
+  if (isMockMode()) {
+    console.log("Demo mode: no API key found, using the recorded Webb analysis.");
+  }
+});
